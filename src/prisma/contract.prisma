@@ -1,0 +1,22 @@
+// use prisma-next
+
+model User {
+  id            Int            @id @default(autoincrement())
+  email         String         @unique
+  name          String?
+  wardrobeItems WardrobeItem[]
+}
+
+model WardrobeItem {
+  id            Int    @id @default(autoincrement())
+  userId        Int
+  name          String
+  category      String
+  colour        String?
+  brand         String?
+  imageUrl      String?
+  purchasePrice Float?
+  wearCount     Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id])
+}
