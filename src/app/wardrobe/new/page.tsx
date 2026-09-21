@@ -1,10 +1,11 @@
+import { createWardrobeItem } from "./actions";
+
 export default function NewWardrobeItemPage() {
   return (
     <main className="p-8">
       <h1 className="text-2xl font-semibold">Add Wardrobe Item</h1>
 
-      <form className="mt-6 space-y-4">
-        <div>
+        <form action={createWardrobeItem} className="mt-6 space-y-4">        <div>
           <label htmlFor="name" className="block text-sm font-medium">
             Item name
           </label>
