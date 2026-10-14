@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { db } from "@/prisma/db";
 
+export const dynamic = "force-dynamic";
+
 export default async function WardrobePage() {
    const items = await db.orm.public.WardrobeItem
     .select("id", "name", "category")
