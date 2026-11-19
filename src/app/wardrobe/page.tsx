@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { db } from "@/prisma/db";
+import DeleteItemButton from "./DeleteItemButton";
 
 export const dynamic = "force-dynamic";
 
@@ -40,12 +41,16 @@ export default async function WardrobePage() {
                 {item.category}
               </p>
 
-              <Link
-                href={`/wardrobe/${item.id}/edit`}
-                className="mt-4 inline-block text-sm font-medium underline"
-              >
-                Edit item
-              </Link>
+              <div className="mt-4 flex items-center gap-4">
+                <Link
+                  href={`/wardrobe/${item.id}/edit`}
+                  className="text-sm font-medium underline"
+                >
+                  Edit item
+                </Link>
+
+                <DeleteItemButton itemId={item.id} />
+              </div>
             </div>
           ))}
         </div>
