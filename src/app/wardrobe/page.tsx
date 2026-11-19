@@ -39,6 +39,13 @@ export default async function WardrobePage() {
               <p className="mt-1 text-sm text-gray-500">
                 {item.category}
               </p>
+
+              <Link
+                href={`/wardrobe/${item.id}/edit`}
+                className="mt-4 inline-block text-sm font-medium underline"
+              >
+                Edit item
+              </Link>
             </div>
           ))}
         </div>
